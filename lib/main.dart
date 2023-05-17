@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invoice_generator/utils/routes_utils.dart';
+import 'package:invoice_generator/views/modals/global.dart';
 import 'package:invoice_generator/views/screens/bill_pdf_page.dart';
 import 'package:invoice_generator/views/screens/cart_page.dart';
 import 'package:invoice_generator/views/screens/favourite_page.dart';
@@ -22,18 +23,24 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData(
-      //   useMaterial3: true,
-      //   colorSchemeSeed: Colors.purple,
-      //   appBarTheme: const AppBarTheme(
-      //     backgroundColor: Colors.purple,
-      //     foregroundColor: Colors.white,
-      //   ),
-      // ),
-      // darkTheme: ThemeData(
-      //   brightness: Brightness.dark,
-      // ),
-      // themeMode: Global.isDark ? ThemeMode.dark : ThemeMode.light,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.purple,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.purple,
+          foregroundColor: Colors.white,
+        ),
+      ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.purple,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.purple,
+          foregroundColor: Colors.white,
+        ),
+        brightness: Brightness.dark,
+      ),
+      themeMode: Global.isDark ? ThemeMode.dark : ThemeMode.light,
       initialRoute: MyRoutes.splash_screen,
       routes: {
         MyRoutes.home: (context) => const home_page(),

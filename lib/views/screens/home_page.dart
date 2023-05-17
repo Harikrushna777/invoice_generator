@@ -60,8 +60,8 @@ class _home_pageState extends State<home_page> {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 2 / 3.5,
-                    mainAxisSpacing: 5,
-                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
                   ),
                   children: List.generate(
                     allProduct.length,
@@ -74,7 +74,7 @@ class _home_pageState extends State<home_page> {
                       child: Column(
                         children: [
                           Expanded(
-                            flex: 3,
+                            flex: 2,
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
@@ -98,6 +98,38 @@ class _home_pageState extends State<home_page> {
                                 color: Colors.purple.shade300.withOpacity(0.5),
                               ),
                               padding: const EdgeInsets.all(10),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    allProduct[index].title,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  Text(
+                                    allProduct[index].brand,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  Text(
+                                    "\$ ${allProduct[index].price}",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],

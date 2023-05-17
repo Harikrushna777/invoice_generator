@@ -247,7 +247,7 @@ List<Map> allProductItem = [
   },
   {
     "id": 14,
-    "title": "Non-Alcoholic Concentrated Perfume Oil",
+    "title": "Non-Alcoholic Perfume Oil",
     "description":
         "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil",
     "price": 120,
@@ -1648,7 +1648,7 @@ List<Map> allProductItem = [
   },
   {
     "id": 87,
-    "title": "t Temperature Controller Incubator Controller",
+    "title": "Temperature Controller",
     "description":
         "Both Heat and Cool Purpose, Temperature control range; -50 to +110, Temperature measurement accuracy; 0.1, Control accuracy; 0.1",
     "price": 40,
@@ -1668,7 +1668,7 @@ List<Map> allProductItem = [
   },
   {
     "id": 88,
-    "title": "TC Reusable Silicone Magic Washing Gloves",
+    "title": "Silicone Magic Washing Gloves",
     "description":
         "TC Reusable Silicone Magic Washing Gloves with Scrubber, Cleaning Brush Scrubber Gloves Heat Resistant Pair for Cleaning of Kitchen, Dishes, Vegetables and Fruits, Bathroom, Car Wash, Pet Care and Multipurpose",
     "price": 29,
@@ -1748,7 +1748,7 @@ List<Map> allProductItem = [
   },
   {
     "id": 92,
-    "title": "HOT SALE IN EUROPE electric racing motorcycle",
+    "title": "Electric Racing Motorcycle",
     "description":
         "HOT SALE IN EUROPE electric racing motorcycle electric motorcycle for sale adult electric motorcycles",
     "price": 920,
@@ -1906,7 +1906,7 @@ List<Map> allProductItem = [
   },
   {
     "id": 100,
-    "title": "Crystal chandelier maria theresa for 12 light",
+    "title": "Crystal chandelier maria theresa",
     "description": "Crystal chandelier maria theresa for 12 light",
     "price": 47,
     "discountPercentage": 16,
