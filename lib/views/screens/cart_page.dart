@@ -10,6 +10,22 @@ class cart_page extends StatefulWidget {
 class _cart_pageState extends State<cart_page> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    int index = ModalRoute.of(context)!.settings.arguments as int;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Cart Page",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.purple,
+        elevation: 0,
+        centerTitle: true,
+      ),
+      body: Center(),
+    );
   }
 }

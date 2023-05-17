@@ -4,6 +4,7 @@ class product {
   final String description;
   final String thumbnail;
   final int price;
+  final String brand;
 
   product({
     required this.id,
@@ -11,6 +12,7 @@ class product {
     required this.description,
     required this.thumbnail,
     required this.price,
+    required this.brand,
   });
 
   factory product.fromMap({required Map data}) {
@@ -20,6 +22,7 @@ class product {
       description: data['description'],
       thumbnail: data['thumbnail'],
       price: data['price'],
+      brand: data['brand'],
     );
   }
 }

@@ -10,11 +10,6 @@ void main() {
   runApp(MyApp());
 }
 
-class Global {
-  static bool isGrid = false;
-  static bool isDark = false;
-}
-
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -27,18 +22,18 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.purple,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.purple,
-          foregroundColor: Colors.white,
-        ),
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
-      themeMode: Global.isDark ? ThemeMode.dark : ThemeMode.light,
+      // theme: ThemeData(
+      //   useMaterial3: true,
+      //   colorSchemeSeed: Colors.purple,
+      //   appBarTheme: const AppBarTheme(
+      //     backgroundColor: Colors.purple,
+      //     foregroundColor: Colors.white,
+      //   ),
+      // ),
+      // darkTheme: ThemeData(
+      //   brightness: Brightness.dark,
+      // ),
+      // themeMode: Global.isDark ? ThemeMode.dark : ThemeMode.light,
       initialRoute: MyRoutes.splash_screen,
       routes: {
         MyRoutes.home: (context) => const home_page(),

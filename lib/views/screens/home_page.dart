@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:invoice_generator/utils/product_utils.dart';
+import 'package:invoice_generator/views/modals/product_variable.dart';
 
-import '../../main.dart';
 import '../../utils/routes_utils.dart';
+import '../modals/global.dart';
 
 class home_page extends StatefulWidget {
   const home_page({Key? key}) : super(key: key);
@@ -16,8 +17,9 @@ class _home_pageState extends State<home_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // leading: I,
         title: const Text(
-          "Contact",
+          "Egle Enterprise",
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -43,6 +45,7 @@ class _home_pageState extends State<home_page> {
             icon: Icon(Global.isGrid ? Icons.list : Icons.grid_on),
           ),
         ],
+        centerTitle: true,
         backgroundColor: Colors.purple,
       ),
       body: Padding(
@@ -55,8 +58,8 @@ class _home_pageState extends State<home_page> {
               ? GridView(
                   scrollDirection: Axis.vertical,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    childAspectRatio: 2 / 3,
+                    crossAxisCount: 2,
+                    childAspectRatio: 2 / 3.5,
                     mainAxisSpacing: 5,
                     crossAxisSpacing: 5,
                   ),
@@ -66,90 +69,87 @@ class _home_pageState extends State<home_page> {
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.primaries[index % 18].shade200,
+                        color: Colors.purple.shade300.withOpacity(0.5),
                       ),
-                      // child: Column(
-                      //   children: [
-                      //     Expanded(
-                      //       flex: 3,
-                      //       child: Container(
-                      //         decoration: BoxDecoration(
-                      //           image: DecorationImage(
-                      //             image: FileImage(
-                      //               Global.image!,
-                      //             ),
-                      //             fit: BoxFit.cover,
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     Expanded(
-                      //       child: Container(
-                      //         width: double.infinity,
-                      //         decoration: BoxDecoration(
-                      //           borderRadius: BorderRadiusDirectional.vertical(
-                      //             bottom: Radius.circular(10),
-                      //           ),
-                      //           color: Colors.primaries[index % 18],
-                      //         ),
-                      //         padding: EdgeInsets.all(10),
-                      //         // child: Text(
-                      //         //   "Title : ${Global.firstName!} ${Global.lastName!}",
-                      //         //   style: TextStyle(
-                      //         //     color: Colors.white,
-                      //         //   ),
-                      //         // ),
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
+                      child: Column(
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                    allProduct[index].thumbnail,
+                                  ),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    const BorderRadiusDirectional.vertical(
+                                  bottom: Radius.circular(10),
+                                ),
+                                color: Colors.purple.shade300.withOpacity(0.5),
+                              ),
+                              padding: const EdgeInsets.all(10),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 )
               : ListView.builder(
                   itemCount: allProduct.length,
                   itemBuilder: (context, index) => ListTile(
-                    leading: CircleAvatar(
-                      radius: 50,
-                      backgroundColor: Colors.primaries[index % 18].shade200,
-                      child: Text("${index + 1}"),
+                    leading: Container(
+                      height: double.infinity,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.purple, width: 5),
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            allProduct[index].thumbnail,
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     title: Text(
-                      "Title :${index + 1}",
+                      allProduct[index].title,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     subtitle: Text(
-                      "Hii.It's My App. $index",
+                      "\$ ${allProduct[index].price}",
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     trailing: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          Navigator.of(context)
+                              .pushNamed(MyRoutes.cart_page, arguments: index);
+                        });
+                      },
                       icon: const Icon(
-                        Icons.call,
-                        color: Colors.green,
+                        Icons.shopping_cart,
+                        color: Colors.purple,
                       ),
                     ),
                   ),
                 ),
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     setState(() {
-      //       Navigator.of(context)
-      //           .pushNamed(MyRoutes.);
-      //     });
-      //   },
-      //   backgroundColor: Colors.purple,
-      //   child: const Icon(
-      //     Icons.add,
-      //     color: Colors.white,
-      //   ),
-      // ),
     );
   }
 }

@@ -1927,4 +1927,4 @@ List<Map> allProductItem = [
 List<product> allProduct =
     allProductItem.map((e) => product.fromMap(data: e)).toList();
 
-// List<cart> =[];
+List<product> cartList = [];

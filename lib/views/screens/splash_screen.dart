@@ -36,11 +36,20 @@ class _splash_screenState extends State<splash_screen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 400,
-              width: 400,
+              height: 350,
+              width: 350,
               child: Image.asset(
-                imagePath + "Mobile.gif",
+                imagePath + "logo.png",
                 fit: BoxFit.cover,
+                color: Colors.purple,
+              ),
+            ),
+            Text(
+              "Egle Enterprise",
+              style: TextStyle(
+                color: Colors.purple,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 30),
