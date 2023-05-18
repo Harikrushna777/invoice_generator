@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:invoice_generator/utils/product_utils.dart';
 import 'package:invoice_generator/views/modals/product_variable.dart';
 
+import '../../utils/image_path.dart';
 import '../../utils/routes_utils.dart';
 import '../modals/global.dart';
 
@@ -17,7 +18,10 @@ class _home_pageState extends State<home_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // leading: I,
+        leading: Image.asset(
+          imagePath + "logo.png",
+          color: Colors.white.withOpacity(0.9),
+        ),
         title: const Text(
           "Egle Enterprise",
           style: TextStyle(
@@ -55,84 +59,95 @@ class _home_pageState extends State<home_page> {
           thickness: 10,
           radius: const Radius.circular(50),
           child: Global.isGrid
-              ? GridView(
-                  scrollDirection: Axis.vertical,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 2 / 3.5,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
-                  ),
-                  children: List.generate(
-                    allProduct.length,
-                    (index) => Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.purple.shade300.withOpacity(0.5),
-                      ),
-                      child: Column(
-                        children: [
-                          Expanded(
-                            flex: 2,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    allProduct[index].thumbnail,
+              ? GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      Navigator.of(context).pushNamed(
+                        MyRoutes.product_intro_page,
+                      );
+                    });
+                  },
+                  child: GridView(
+                    scrollDirection: Axis.vertical,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 2 / 3.5,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                    ),
+                    children: List.generate(
+                      allProduct.length,
+                      (index) => Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.purple.shade300.withOpacity(0.5),
+                        ),
+                        child: Column(
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      allProduct[index].thumbnail,
+                                    ),
+                                    fit: BoxFit.cover,
                                   ),
-                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    const BorderRadiusDirectional.vertical(
-                                  bottom: Radius.circular(10),
+                            Expanded(
+                              child: Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      const BorderRadiusDirectional.vertical(
+                                    bottom: Radius.circular(10),
+                                  ),
+                                  color:
+                                      Colors.purple.shade300.withOpacity(0.5),
                                 ),
-                                color: Colors.purple.shade300.withOpacity(0.5),
-                              ),
-                              padding: const EdgeInsets.all(10),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    allProduct[index].title,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
+                                padding: const EdgeInsets.all(10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      allProduct[index].title,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                      textAlign: TextAlign.center,
                                     ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  Text(
-                                    allProduct[index].brand,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
+                                    Text(
+                                      allProduct[index].brand,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                      ),
+                                      textAlign: TextAlign.center,
                                     ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  Text(
-                                    "\$ ${allProduct[index].price}",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
+                                    Text(
+                                      "\$ ${allProduct[index].price}",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                      ),
+                                      textAlign: TextAlign.center,
                                     ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -169,12 +184,14 @@ class _home_pageState extends State<home_page> {
                     trailing: IconButton(
                       onPressed: () {
                         setState(() {
-                          Navigator.of(context)
-                              .pushNamed(MyRoutes.cart_page, arguments: index);
+                          Navigator.of(context).pushNamed(
+                              MyRoutes.product_intro_page,
+                              arguments: index);
                         });
                       },
                       icon: const Icon(
-                        Icons.shopping_cart,
+                        Icons.arrow_forward_rounded,
+                        size: 28,
                         color: Colors.purple,
                       ),
                     ),

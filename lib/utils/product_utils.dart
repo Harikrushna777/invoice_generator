@@ -1928,3 +1928,24 @@ List<product> allProduct =
     allProductItem.map((e) => product.fromMap(data: e)).toList();
 
 List<product> cartList = [];
+List category = [
+  "laptops",
+  "smartphones",
+  "mens-shirts",
+  "mens-watches",
+  "womens-shoes",
+  "womens-dresses",
+  "womens-watches",
+  "womens-jewellery",
+  "tops",
+  "womens-bags",
+  "sunglasses",
+  "furniture",
+  "home-decoration",
+  "lighting",
+  "motorcycle",
+  "automotive",
+  "groceries",
+  "skincare",
+  "fragrances",
+];

@@ -5,6 +5,7 @@ import 'package:invoice_generator/views/screens/bill_pdf_page.dart';
 import 'package:invoice_generator/views/screens/cart_page.dart';
 import 'package:invoice_generator/views/screens/favourite_page.dart';
 import 'package:invoice_generator/views/screens/home_page.dart';
+import 'package:invoice_generator/views/screens/product_intro_page.dart';
 import 'package:invoice_generator/views/screens/splash_screen.dart';
 
 void main() {
@@ -43,8 +44,9 @@ class _MyAppState extends State<MyApp> {
       themeMode: Global.isDark ? ThemeMode.dark : ThemeMode.light,
       initialRoute: MyRoutes.splash_screen,
       routes: {
-        MyRoutes.home: (context) => const home_page(),
         MyRoutes.splash_screen: (context) => const splash_screen(),
+        MyRoutes.home: (context) => const home_page(),
+        MyRoutes.product_intro_page: (context) => const product_intro_page(),
         MyRoutes.cart_page: (context) => const cart_page(),
         MyRoutes.bill_pdf_page: (context) => const bill_pdf_page(),
         MyRoutes.favourite_page: (context) => const favourite_page(),

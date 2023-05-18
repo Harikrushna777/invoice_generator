@@ -5,6 +5,9 @@ class product {
   final String thumbnail;
   final int price;
   final String brand;
+  final String category;
+  // final double discountPercentage;
+  // final int stock;
 
   product({
     required this.id,
@@ -13,6 +16,9 @@ class product {
     required this.thumbnail,
     required this.price,
     required this.brand,
+    required this.category,
+    // required this.discountPercentage,
+    // required this.stock,
   });
 
   factory product.fromMap({required Map data}) {
@@ -23,6 +29,9 @@ class product {
       thumbnail: data['thumbnail'],
       price: data['price'],
       brand: data['brand'],
+      category: data['category'],
+      // discountPercentage: data['discountPercentage'],
+      // stock: data['stock'],
     );
   }
 }
