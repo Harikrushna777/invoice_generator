@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:invoice_generator/utils/routes_utils.dart';
 
 import '../../utils/product_utils.dart';
-import '../../utils/routes_utils.dart';
 
 class cart_page extends StatefulWidget {
   const cart_page({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _cart_pageState extends State<cart_page> {
     int index = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Cart Page",
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -24,24 +24,35 @@ class _cart_pageState extends State<cart_page> {
             color: Colors.white,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .pushNamed(MyRoutes.bill_pdf_page, arguments: index);
+            },
+            icon: Icon(
+              Icons.picture_as_pdf_rounded,
+              color: Colors.white,
+            ),
+          ),
+        ],
         backgroundColor: Colors.purple,
         elevation: 0,
         centerTitle: true,
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Container(
           decoration: BoxDecoration(
             color: Colors.purple,
             borderRadius: BorderRadius.circular(15),
           ),
-          padding: EdgeInsets.all(10),
           child: ListView.builder(
             itemCount: cartList.length,
             itemBuilder: (context, index) => ListTile(
               leading: Container(
                 height: double.infinity,
-                width: 100,
+                width: 80,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.white, width: 5),
                   borderRadius: BorderRadius.circular(15),
@@ -58,6 +69,7 @@ class _cart_pageState extends State<cart_page> {
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
+                  fontSize: 14,
                 ),
               ),
               subtitle: Text(
@@ -65,19 +77,58 @@ class _cart_pageState extends State<cart_page> {
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
+                  fontSize: 14,
                 ),
               ),
-              trailing: IconButton(
-                onPressed: () {
-                  setState(() {
-                    cartList.remove(cartList[index]);
-                  });
-                },
-                icon: const Icon(
-                  Icons.cancel,
-                  size: 28,
-                  color: Colors.white,
-                ),
+              trailing: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            allProduct[index].quantuty--;
+                            if (allProduct[index].quantuty == 0 ||
+                                allProduct[index].quantuty <= 0) {
+                              cartList.remove(cartList[index]);
+                            } else {
+                              cartList.remove(cartList[index]);
+                            }
+                          });
+                          allProduct[index].quantuty = 1;
+                        },
+                        icon: Icon(
+                          Icons.remove,
+                          color: Colors.white,
+                          size: 14,
+                        ),
+                      ),
+                      Text(
+                        "${allProduct[index].quantuty}",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            allProduct[index].quantuty++;
+                          });
+                        },
+                        icon: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 10,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),
           ),

@@ -1928,6 +1928,9 @@ List<product> allProduct =
     allProductItem.map((e) => product.fromMap(data: e)).toList();
 
 List<product> cartList = [];
+
+List<product> favouriteList = [];
+
 List category = [
   "laptops",
   "smartphones",

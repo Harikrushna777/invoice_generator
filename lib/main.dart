@@ -7,6 +7,7 @@ import 'package:invoice_generator/views/screens/favourite_page.dart';
 import 'package:invoice_generator/views/screens/home_page.dart';
 import 'package:invoice_generator/views/screens/product_intro_page.dart';
 import 'package:invoice_generator/views/screens/splash_screen.dart';
+import 'package:invoice_generator/views/screens/user_detail.dart';
 
 void main() {
   runApp(MyApp());
@@ -50,6 +51,7 @@ class _MyAppState extends State<MyApp> {
         MyRoutes.cart_page: (context) => const cart_page(),
         MyRoutes.bill_pdf_page: (context) => const bill_pdf_page(),
         MyRoutes.favourite_page: (context) => const favourite_page(),
+        MyRoutes.user_detail: (context) => const user_detail(),
       },
     );
   }

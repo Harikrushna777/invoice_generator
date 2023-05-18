@@ -11,7 +11,6 @@ class product_intro_page extends StatefulWidget {
 }
 
 class _product_intro_pageState extends State<product_intro_page> {
-  // int index = ModalRoute.of(context)!.settings.arguments as int;
   @override
   Widget build(BuildContext context) {
     int index = ModalRoute.of(context)!.settings.arguments as int;

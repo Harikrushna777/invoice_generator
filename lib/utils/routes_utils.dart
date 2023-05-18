@@ -5,4 +5,5 @@ class MyRoutes {
   static String cart_page = 'cart_page';
   static String favourite_page = 'favourite_product';
   static String bill_pdf_page = 'bill_pdf_page';
+  static String user_detail = 'user_detail';
 }

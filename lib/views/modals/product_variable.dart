@@ -6,8 +6,7 @@ class product {
   final int price;
   final String brand;
   final String category;
-  // final double discountPercentage;
-  // final int stock;
+  int quantuty = 1;
 
   product({
     required this.id,
