@@ -38,7 +38,7 @@ class _home_pageState extends State<home_page> {
           onPressed: () {
             Navigator.of(context).pushNamed(MyRoutes.user_detail);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.account_box_rounded,
             color: Colors.white,
           ),
