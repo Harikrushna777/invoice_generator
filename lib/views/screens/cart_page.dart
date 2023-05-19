@@ -94,11 +94,9 @@ class _cart_pageState extends State<cart_page> {
                             if (allProduct[index].quantuty == 0 ||
                                 allProduct[index].quantuty <= 0) {
                               cartList.remove(cartList[index]);
-                            } else {
-                              cartList.remove(cartList[index]);
+                              allProduct[index].quantuty = 1;
                             }
                           });
-                          allProduct[index].quantuty = 1;
                         },
                         icon: Icon(
                           Icons.remove,
