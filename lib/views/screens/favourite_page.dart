@@ -72,7 +72,7 @@ class _favourite_pageState extends State<favourite_page> {
                     favouriteList.removeAt(index);
                   });
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.cancel,
                   color: Colors.white,
                 ),

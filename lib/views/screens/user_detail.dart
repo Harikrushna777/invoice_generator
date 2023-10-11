@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import '../components/my_snackbar.dart';
 import '../modals/global.dart';
 
 class user_detail extends StatefulWidget {
@@ -25,7 +24,7 @@ class _user_detailState extends State<user_detail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "User Details",
           style: TextStyle(
             color: Colors.white,
@@ -47,7 +46,7 @@ class _user_detailState extends State<user_detail> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Stack(
                   alignment: Alignment.bottomRight,
                   children: [
@@ -121,7 +120,7 @@ class _user_detailState extends State<user_detail> {
                 Row(
                   children: [
                     const SizedBox(width: 10),
-                    Expanded(
+                    const Expanded(
                       child: Icon(
                         Icons.account_circle_sharp,
                         size: 30,
@@ -178,7 +177,7 @@ class _user_detailState extends State<user_detail> {
                 Row(
                   children: [
                     const SizedBox(width: 10),
-                    Expanded(
+                    const Expanded(
                       child: Icon(
                         Icons.mail,
                         size: 30,
@@ -236,7 +235,7 @@ class _user_detailState extends State<user_detail> {
                 Row(
                   children: [
                     const SizedBox(width: 10),
-                    Expanded(
+                    const Expanded(
                       child: Icon(
                         Icons.phone_android,
                         size: 30,
@@ -303,7 +302,7 @@ class _user_detailState extends State<user_detail> {
                 Row(
                   children: [
                     const SizedBox(width: 10),
-                    Expanded(
+                    const Expanded(
                       child: Icon(
                         Icons.location_pin,
                         size: 30,

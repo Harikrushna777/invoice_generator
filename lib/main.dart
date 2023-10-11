@@ -10,7 +10,7 @@ import 'package:invoice_generator/views/screens/splash_screen.dart';
 import 'package:invoice_generator/views/screens/user_detail.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {

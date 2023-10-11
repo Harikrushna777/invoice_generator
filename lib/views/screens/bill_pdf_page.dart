@@ -32,10 +32,10 @@ class _bill_pdf_pageState extends State<bill_pdf_page> {
             mainAxisAlignment: pw.MainAxisAlignment.start,
             children: [
               pw.Container(
-                padding: pw.EdgeInsets.all(10),
+                padding: const pw.EdgeInsets.all(10),
                 width: 200,
                 alignment: pw.Alignment.center,
-                decoration: pw.BoxDecoration(
+                decoration: const pw.BoxDecoration(
                   color: PdfColors.purple,
                   borderRadius: pw.BorderRadius.only(
                       topRight: pw.Radius.circular(30),
@@ -177,7 +177,7 @@ class _bill_pdf_pageState extends State<bill_pdf_page> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: Text(
+        title: const Text(
           "User Bill",
           style: TextStyle(
             fontWeight: FontWeight.bold,

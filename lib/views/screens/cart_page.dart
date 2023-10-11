@@ -30,7 +30,7 @@ class _cart_pageState extends State<cart_page> {
               Navigator.of(context)
                   .pushNamed(MyRoutes.bill_pdf_page, arguments: index);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.picture_as_pdf_rounded,
               color: Colors.white,
             ),
@@ -98,7 +98,7 @@ class _cart_pageState extends State<cart_page> {
                             }
                           });
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.remove,
                           color: Colors.white,
                           size: 14,
@@ -106,7 +106,7 @@ class _cart_pageState extends State<cart_page> {
                       ),
                       Text(
                         "${allProduct[index].quantuty}",
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
@@ -118,7 +118,7 @@ class _cart_pageState extends State<cart_page> {
                             allProduct[index].quantuty++;
                           });
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.add,
                           color: Colors.white,
                           size: 10,
