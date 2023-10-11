@@ -93,7 +93,7 @@ class _bill_pdf_pageState extends State<bill_pdf_page> {
                                 ),
                               ),
                               pw.Text(
-                                Global.name!,
+                                Global.name ?? "",
                                 style: pw.TextStyle(
                                   fontSize: 14,
                                   fontWeight: pw.FontWeight.bold,

@@ -5,14 +5,14 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import '../modals/global.dart';
 
-class user_detail extends StatefulWidget {
-  const user_detail({Key? key}) : super(key: key);
+class UserDetail extends StatefulWidget {
+  const UserDetail({Key? key}) : super(key: key);
 
   @override
-  State<user_detail> createState() => _user_detailState();
+  State<UserDetail> createState() => _UserDetailState();
 }
 
-class _user_detailState extends State<user_detail> {
+class _UserDetailState extends State<UserDetail> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   TextEditingController nameController =
@@ -69,7 +69,7 @@ class _user_detailState extends State<user_detail> {
                         showDialog(
                           context: context,
                           builder: (context) => AlertDialog(
-                            title: const Text("Selete The Method ?"),
+                            title: const Text("Select The Method ?"),
                             actions: [
                               TextButton.icon(
                                 onPressed: () async {
@@ -231,7 +231,7 @@ class _user_detailState extends State<user_detail> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                // Mobail Number
+                // Mobile Number
                 Row(
                   children: [
                     const SizedBox(width: 10),
@@ -260,7 +260,7 @@ class _user_detailState extends State<user_detail> {
                         ],
                         validator: (val) {
                           if (val!.isEmpty) {
-                            return "Please Enter Your Mobail No";
+                            return "Please Enter Your Mobile No";
                           } else if (val.length < 10) {
                             return "Contact Number must have 10 digits...";
                           } else {
@@ -272,12 +272,12 @@ class _user_detailState extends State<user_detail> {
                         },
                         textInputAction: TextInputAction.next,
                         decoration: InputDecoration(
-                          hintText: "Enter Your Mobail No",
+                          hintText: "Enter Your Mobile No",
                           hintStyle: const TextStyle(
                             color: Colors.white,
                           ),
                           prefixText: "+91 ",
-                          labelText: "Mobail Number",
+                          labelText: "Mobile Number",
                           labelStyle: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

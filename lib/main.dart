@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
         MyRoutes.cart_page: (context) => const cart_page(),
         MyRoutes.bill_pdf_page: (context) => const bill_pdf_page(),
         MyRoutes.favourite_page: (context) => const favourite_page(),
-        MyRoutes.user_detail: (context) => const user_detail(),
+        MyRoutes.user_detail: (context) => const UserDetail(),
       },
     );
   }
